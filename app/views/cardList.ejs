@@ -1,0 +1,28 @@
+<form action="/search/name">
+    <input type="text" name="name" placeholder="Bienvenue sur Lycos" />
+    <input type="submit" value="Va chercher !" />
+</form>
+
+<h3>Par élément</h3>
+<form action="/search/element" method="get">
+    <select name="element" id="element">
+        <option value="null">aucun</option>
+        <option value="tonnerre">tonnerre</option>
+        <option value="terre">terre</option>
+        <option value="glace">glace</option>
+        <option value="vent">vent</option>
+        <option value="poison">poison</option>
+        <option value="feu">feu</option>
+        <option value="eau">eau</option>
+        <option value="sacré">sacré</option>
+    </select>
+    <input type="submit" value="Chercher" />
+</form>
+<ul>
+    <% for(const card of cards) { %>
+    <li>
+        <a href="/card/detail/<%= card.id %>"><%= card.name %></a>
+        <a href="/card/add/<%= card.id %>">[+]</a>
+    </li>
+    <% } %>
+</ul>
